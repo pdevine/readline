@@ -418,6 +418,10 @@ func (r *RuneBuffer) MoveTo(ch rune, prevChar, reverse bool) (success bool) {
 }
 
 func (r *RuneBuffer) isInLineEdge() bool {
+	// TODO(pdev) - this fix seems to be broken in iTerm2 and Terminal and is causing the Painter
+	//              to not display properly
+	return false
+
 	if isWindows {
 		return false
 	}
