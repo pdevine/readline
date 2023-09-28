@@ -535,7 +535,7 @@ func (r *RuneBuffer) getBackspaceSequence() []byte {
 		buf = append(buf, '\b')
 		if sep[i] {
 			// up one line, go to the start of the line and move cursor right to the end (r.width)
-			buf = append(buf, "\033[A\r"+"\033["+strconv.Itoa(r.width)+"C"...)
+			buf = append(buf, "\r"+"\033["+strconv.Itoa(r.width)+"C"...)
 		}
 	}
 
